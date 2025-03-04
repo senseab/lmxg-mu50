@@ -4,7 +4,6 @@
 
   # dependencies
   mame,
-  which,
   p7zip,
   ...
 }:
@@ -28,7 +27,6 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     mame
-    which
   ];
 
   phases = [
@@ -45,13 +43,13 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/bin
-    cat ${bin} | sed "s|@DIR@|$out|" > $out/bin/${pname}
+    cat ${bin} | sed "s|@DIR@|$out|" | sed "s|@MAME_BIN_DIR@|${mame}/bin|" > $out/bin/${pname}
     chmod +x $out/bin/${pname}
     mkdir -p $out/share/applications
     cat ${desktop} | sed "s|@EXEC@|$out/bin/${pname}|" > $out/share/applications/${pname}.desktop
     mkdir -p $out/share/pixmaps
     cp ${icon} $out/share/pixmaps/${pname}.png
-
+ 
     mkdir -p $out/share/mame/assets/mu50
 
     cp -r /build/mu50 $out/share/mame/assets/
