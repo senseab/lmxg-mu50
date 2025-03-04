@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Terminal=false
-Exec=@EXEC
+Exec=@EXEC@
 Icon=lmxg-mu50
 Name=LMXG-MU50
 Comment=Run mu50 in mame;
