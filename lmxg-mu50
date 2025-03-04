@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+PACKAGE_DIR="@DIR@/share/mame/assets/mu50"
+WORKDIR="$XDG_DATA_HOME/lmxg-mu50"
+MAME_BIN=`which mame`
+MIDI_PORT="Midi Through Port-0"
+
+mkdir -p  $WORKDIR && cd $WORKDIR
+
+first_run_check () {
+    ROMDIR="roms/"
+    [ -d "$ROMDIR" ] || ( mkdir -p $ROMDIR && cp -r $PACKAGE_DIR $ROMDIR )
+}
+
+main() {
+    first_run_check
+    "$MAME_BIN" mu50 -w -midiin "$MIDI_PORT"
+}
+
+main
