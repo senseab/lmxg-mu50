@@ -24,6 +24,7 @@
         formatter = treefmtEval.config.build.wrapper;
         devShell = mkShell {
           nativeBuildInputs = with pkgs; [
+            p7zip
             tokei
             nil
           ];
