@@ -15,7 +15,7 @@ first_run_check () {
 
 main() {
     first_run_check
-    "$MAME_BIN" mu50 -w -midiin "$MIDI_PORT"
+    "$MAME_BIN" mu50 -w -midiin "$MIDI_PORT" -videodriver "x11" $@
 }
 
-main
+main $@

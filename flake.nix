@@ -7,7 +7,6 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       treefmt-nix,
       utils,
