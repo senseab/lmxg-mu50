@@ -17,8 +17,8 @@ stdenv.mkDerivation rec {
   version = "0.1.0";
 
   src = fetchurl {
-    url = "https://web.archive.org/web/20250623025020/https://mdk.cab/download/standalone/mu50.7z";
-    sha256 = "sha256-ZXsMg8T2mVkpN+2oSQ7w+xTovW/WCGlydUdQrPIlECM=";
+    url = "https://web.archive.org/web/20260520033320/https://mdk.cab/download/standalone/mu50.7z";
+    sha256 = "sha256-IGxbqkm68gazIlTFuBiorIWBxK4MMY5suhsDbs52OyI=";
   };
 
   nativeBuildInputs = [
