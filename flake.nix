@@ -29,6 +29,8 @@
           ];
         };
 
+        devShells.default = devShell;
+
         packages.lmxg-mu50 = pkgs.callPackage ./package.nix { };
         defaultPackage = packages.lmxg-mu50;
       }
